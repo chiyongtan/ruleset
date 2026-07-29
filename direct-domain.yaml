@@ -1,0 +1,53 @@
+# 自定义直连（仅域名/关键字）
+# behavior: classical
+# 用法: RULE-SET,my-direct-domain,DIRECT
+# 建议放在广告拦截规则之前，避免抖音/字节等被误伤
+payload:
+  # 公益站
+  - DOMAIN-SUFFIX,muyuan.do
+  - DOMAIN-SUFFIX,jjtui.com
+  - DOMAIN-SUFFIX,wenzflow.com
+  - DOMAIN-SUFFIX,bing.com
+  - DOMAIN-SUFFIX,chybenzun.top
+  - DOMAIN-SUFFIX,hybgzs.com
+  - DOMAIN-SUFFIX,elysia.h-e.top
+  - DOMAIN-SUFFIX,rugao.me
+  - DOMAIN-SUFFIX,hlwy.org
+  - DOMAIN-SUFFIX,elysiver.h-e.top
+  - DOMAIN-SUFFIX,opencode.ai
+
+  # 其它直连
+  - DOMAIN-SUFFIX,subboost.org
+  - DOMAIN-SUFFIX,catebox.com
+  - DOMAIN-SUFFIX,cbrain.site
+  - DOMAIN-SUFFIX,timefriend.xin
+  - DOMAIN-SUFFIX,lurenyv.us.kg
+  - DOMAIN-SUFFIX,bitwarden.com
+  - DOMAIN-SUFFIX,wenzmark.com
+  - DOMAIN-SUFFIX,project-graph.top
+  - DOMAIN-SUFFIX,aihub.top
+
+  # 抖音/字节：不要当广告拒绝（域名部分）
+  - DOMAIN-SUFFIX,snssdk.com
+  - DOMAIN-SUFFIX,amemv.com
+  - DOMAIN-SUFFIX,douyin.com
+  - DOMAIN-SUFFIX,iesdouyin.com
+  - DOMAIN-SUFFIX,bytedance.com
+  - DOMAIN-SUFFIX,byteimg.com
+  - DOMAIN-SUFFIX,pstatp.com
+  - DOMAIN-SUFFIX,toutiao.com
+
+  # 手心输入法
+  - DOMAIN-SUFFIX,cootek.com
+  - DOMAIN-SUFFIX,touchpal.com
+  - DOMAIN-SUFFIX,shouxinyuyan.com
+  - DOMAIN-KEYWORD,cootek
+  - DOMAIN-KEYWORD,touchpal
+  - DOMAIN-KEYWORD,shouxin
+
+  # 夸克
+  - DOMAIN-SUFFIX,pan.quark.cn
+  - DOMAIN-SUFFIX,quark.cn
+  - DOMAIN-SUFFIX,quark.net
+  - DOMAIN-SUFFIX,cdn.quark.cn
+  - DOMAIN-KEYWORD,quark
