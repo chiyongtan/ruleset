@@ -1,0 +1,7 @@
+# 重要-自建
+# 用法: RULE-SET,my-selfhost,自建
+payload:
+  - DOMAIN-SUFFIX,linux.do
+  - DOMAIN-SUFFIX,anyrouter.top
+  - DOMAIN-SUFFIX,42w.shop
+  - DOMAIN-SUFFIX,idcflare.com
