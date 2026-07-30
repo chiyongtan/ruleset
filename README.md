@@ -8,7 +8,7 @@
 
 | 文件 | behavior | 用途 | 主配置引用 |
 |---|---|---|---|
-| `selfhost.yaml` | domain | 重要自建站点 | `RULE-SET,my-selfhost,自建` |
+| `selfhost.yaml` | domain | 重点域名（走自建节点，保持 IP 干净） | `RULE-SET,my-selfhost,自建` |
 | `direct-domain.yaml` | classical | 自定义直连域名/关键字 | `RULE-SET,my-direct-domain,DIRECT` |
 | `direct-ip.yaml` | ipcidr | 自定义直连 IP | `RULE-SET,my-direct-ip,DIRECT,no-resolve` |
 

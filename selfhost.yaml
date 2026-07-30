@@ -1,4 +1,4 @@
-# 重要-自建（仅域名）
+# 重点域名（仅域名，走自建节点，保持 IP 干净）
 # behavior: domain
 # 用法: RULE-SET,my-selfhost,自建
 payload:
@@ -6,3 +6,4 @@ payload:
   - "+.anyrouter.top"
   - "+.42w.shop"
   - "+.idcflare.com"
+  - "+.lucky0625.qzz.io"
