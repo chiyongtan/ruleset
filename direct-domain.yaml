@@ -26,6 +26,7 @@ payload:
   - DOMAIN-SUFFIX,wenzmark.com
   - DOMAIN-SUFFIX,project-graph.top
   - DOMAIN-SUFFIX,aihub.top
+  - DOMAIN-SUFFIX,665959.xyz
 
   # 抖音/字节：不要当广告拒绝（域名部分）
   - DOMAIN-SUFFIX,snssdk.com
