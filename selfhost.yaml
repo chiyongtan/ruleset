@@ -1,5 +1,6 @@
 # 重点域名（仅域名，走自建节点，保持 IP 干净）
 # behavior: domain
+# 规则：最多去掉一段子域；公共二级域名平台保留租户段
 # 用法: RULE-SET,my-selfhost,自建
 payload:
   - "+.linux.do"
@@ -7,18 +8,17 @@ payload:
   - "+.42w.shop"
   - "+.idcflare.com"
   - "+.lucky0625.qzz.io"
-  - "+.de5.net"
-  - "+.qzz.io"
+  - "+.jiuuij.de5.net"
+  - "+.zhenhaoji.qzz.io"
   - "+.121628.xyz"
   - "+.oops.asia"
   - "+.abrdns.com"
   - "+.lyclaude.site"
   - "+.52ccl.cn"
   - "+.maoyulin.xyz"
-  - "+.rugao.me"
-  - "+.pp.ua"
+  - "+.icoe.pp.ua"
   - "+.xiaoxiaobai.me"
-  - "+.us.ci"
+  - "+.imai.us.ci"
   - "+.jianzhile.vip"
   - "+.huaibao.top"
   - "+.131518.xyz"
