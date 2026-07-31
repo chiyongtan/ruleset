@@ -27,6 +27,7 @@ payload:
   - DOMAIN-SUFFIX,project-graph.top
   - DOMAIN-SUFFIX,aihub.top
   - DOMAIN-SUFFIX,665959.xyz
+  - DOMAIN-SUFFIX,zzzcoding.org
 
   # 抖音/字节：不要当广告拒绝（域名部分）
   - DOMAIN-SUFFIX,snssdk.com
