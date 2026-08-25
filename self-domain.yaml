@@ -1,0 +1,30 @@
+# 自建域名
+# behavior: classical
+# 用法: RULE-SET,self-domain,自建组
+payload:
+  - DOMAIN-SUFFIX,linux.do
+  - DOMAIN-SUFFIX,anyrouter.top
+  - DOMAIN-SUFFIX,42w.shop
+  - DOMAIN-SUFFIX,idcflare.com
+  - DOMAIN-SUFFIX,zzzcoding.org
+  - DOMAIN-SUFFIX,lucky0625.qzz.io
+  - DOMAIN-SUFFIX,121628.xyz
+  - DOMAIN-SUFFIX,maoyulin.xyz
+  - DOMAIN-SUFFIX,icoe.pp.ua
+  - DOMAIN-SUFFIX,huaibao.top
+  - DOMAIN-SUFFIX,131518.xyz
+  - DOMAIN-SUFFIX,aitoken.forum
+  - DOMAIN-SUFFIX,mofas.one
+  - DOMAIN-SUFFIX,123nhh.com
+  - DOMAIN-SUFFIX,hxi.me
+  - DOMAIN-SUFFIX,vipclaude.codes
+  - DOMAIN-SUFFIX,abrdns.com
+  - DOMAIN-SUFFIX,oops.asia
+  - DOMAIN-SUFFIX,1password.com
+  - DOMAIN-SUFFIX,lyclaude.site
+  - DOMAIN-SUFFIX,imai.us.ci
+  - DOMAIN-SUFFIX,0xpsyche.me
+  - DOMAIN-SUFFIX,remixjc.cn
+  - DOMAIN-SUFFIX,okx.com
+  - DOMAIN-SUFFIX,venlacy.com
+  - DOMAIN-SUFFIX,aihub.top

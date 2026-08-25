@@ -1,6 +1,6 @@
-# 自定义直连（仅 IP）
+# 直连 IP
 # behavior: ipcidr
-# 用法: RULE-SET,my-direct-ip,DIRECT,no-resolve
+# 用法: RULE-SET,direct-ip,DIRECT,no-resolve
 payload:
   - 118.89.0.0/16
   - 123.58.0.0/16
