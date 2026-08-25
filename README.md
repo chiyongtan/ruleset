@@ -7,6 +7,7 @@
 | 文件 | behavior | 用途 | 主配置引用 |
 |---|---|---|---|
 | `self-domain.yaml` | classical | 自建域名 | `RULE-SET,self-domain,自建组` |
+| `self-ip.yaml` | ipcidr | 自建 IP（暂为空） | `RULE-SET,self-ip,自建组,no-resolve` |
 | `direct-domain.yaml` | classical | 直连域名 | `RULE-SET,direct-domain,DIRECT` |
 | `direct-ip.yaml` | ipcidr | 直连 IP | `RULE-SET,direct-ip,DIRECT,no-resolve` |
 
@@ -14,6 +15,7 @@
 
 ```text
 https://raw.githubusercontent.com/chiyongtan/ruleset/main/self-domain.yaml
+https://raw.githubusercontent.com/chiyongtan/ruleset/main/self-ip.yaml
 https://raw.githubusercontent.com/chiyongtan/ruleset/main/direct-domain.yaml
 https://raw.githubusercontent.com/chiyongtan/ruleset/main/direct-ip.yaml
 ```
@@ -22,6 +24,7 @@ jsDelivr 备用：
 
 ```text
 https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/self-domain.yaml
+https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/self-ip.yaml
 https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/direct-domain.yaml
 https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/direct-ip.yaml
 ```
@@ -37,6 +40,14 @@ rule-providers:
     interval: 86400
     path: ./ruleset/self-domain.yaml
     url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/self-domain.yaml
+
+  self-ip:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    interval: 86400
+    path: ./ruleset/self-ip.yaml
+    url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/self-ip.yaml
 
   direct-domain:
     type: http
@@ -56,6 +67,7 @@ rule-providers:
 
 rules:
   - RULE-SET,self-domain,自建组
+  - RULE-SET,self-ip,自建组,no-resolve
   - RULE-SET,direct-domain,DIRECT
   - RULE-SET,direct-ip,DIRECT,no-resolve
 ```
