@@ -3,10 +3,16 @@
 # 用法: RULE-SET,decide,选择节点
 # 说明: 默认分流规则缺陷的额外补充
 payload:
-  - DOMAIN-SUFFIX,play.google.com
+  # Google Play 防送中：必须优先于 google-cn / cn 规则并使用境外 DNS。
+  - DOMAIN-SUFFIX,services.googleapis.cn
   - DOMAIN-SUFFIX,play.googleapis.com
-  - DOMAIN-SUFFIX,dl.google.com
+  - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
   - DOMAIN-SUFFIX,android.clients.google.com
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+
+  # Google Play 商店、更新接口和下载 CDN。
+  - DOMAIN-SUFFIX,play.google.com
+  - DOMAIN-SUFFIX,dl.google.com
   - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,googleusercontent.com
   - DOMAIN-SUFFIX,ggpht.com
