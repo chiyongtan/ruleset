@@ -1,0 +1,32 @@
+# 加密货币交易所域名
+# behavior: classical
+# 用法: RULE-SET,btc-domain,自建组
+# 范围: Binance、OKX、Bitget、Bybit 官方主站/API/WS/区域域名
+payload:
+  # Binance
+  - DOMAIN-SUFFIX,binance.com
+  - DOMAIN-SUFFIX,binance.us
+  - DOMAIN-SUFFIX,binance.vision
+  - DOMAIN-SUFFIX,bnbstatic.com
+
+  # OKX
+  - DOMAIN-SUFFIX,okx.com
+
+  # Bitget
+  - DOMAIN-SUFFIX,bitget.com
+
+  # Bybit
+  - DOMAIN-SUFFIX,bybit.com
+  - DOMAIN-SUFFIX,bytick.com
+  - DOMAIN-SUFFIX,bybitglobal.com
+  - DOMAIN-SUFFIX,bybit.nl
+  - DOMAIN-SUFFIX,bybit.tr
+  - DOMAIN-SUFFIX,bybit.kz
+  - DOMAIN-SUFFIX,bybit.ae
+  - DOMAIN-SUFFIX,bybit.eu
+  - DOMAIN-SUFFIX,bybit.id
+  - DOMAIN-SUFFIX,bybitgeorgia.ge
+  - DOMAIN,api.manepa.jp
+  - DOMAIN,api-testnet.manepa.jp
+  - DOMAIN,api.spark-fintech.com
+  - DOMAIN,api-testnet.spark-fintech.com
