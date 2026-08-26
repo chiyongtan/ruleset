@@ -40,7 +40,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    interval: 86400
+    interval: 3600
     path: ./ruleset/self-domain.yaml
     url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/self-domain.yaml
 
@@ -48,7 +48,7 @@ rule-providers:
     type: http
     behavior: ipcidr
     format: yaml
-    interval: 86400
+    interval: 3600
     path: ./ruleset/self-ip.yaml
     url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/self-ip.yaml
 
@@ -56,7 +56,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    interval: 86400
+    interval: 3600
     path: ./ruleset/direct-domain.yaml
     url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/direct-domain.yaml
 
@@ -64,7 +64,7 @@ rule-providers:
     type: http
     behavior: ipcidr
     format: yaml
-    interval: 86400
+    interval: 3600
     path: ./ruleset/direct-ip.yaml
     url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/direct-ip.yaml
 
@@ -72,16 +72,16 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    interval: 86400
+    interval: 3600
     path: ./ruleset/decide-domain.yaml
     url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/decide-domain.yaml
 
 rules:
+  - RULE-SET,decide,选择节点
   - RULE-SET,self-domain,自建组
   - RULE-SET,self-ip,自建组,no-resolve
   - RULE-SET,direct-domain,DIRECT
   - RULE-SET,direct-ip,DIRECT,no-resolve
-  - RULE-SET,decide,选择节点
 ```
 
 建议把自制 `RULE-SET` 放在广告规则之前。若同一域名同时存在于多个规则集，主配置中靠前的规则优先生效。
