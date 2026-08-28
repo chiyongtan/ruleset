@@ -1,0 +1,76 @@
+name: purge jsdelivr
+
+# 推送后自动清 jsDelivr 边缘缓存。
+# 不做这件事的话，jsDelivr 的 s-maxage=43200 会让规则最多滞后 12 小时才生效。
+on:
+  push:
+    branches: [main]
+    paths: ['**.yaml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# 连续推送时只保留最后一次，避免并发 purge 触发限流。
+concurrency:
+  group: purge-jsdelivr
+  cancel-in-progress: false
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Purge changed rule files
+        env:
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -u
+
+          # 手动触发或拿不到可用的 base 时，退化为全量 purge。
+          if [ "$EVENT" = "workflow_dispatch" ] \
+             || [ -z "${BEFORE:-}" ] \
+             || [ "$BEFORE" = "0000000000000000000000000000000000000000" ] \
+             || ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            files=$(ls -1 *.yaml 2>/dev/null || true)
+            echo "mode: all files"
+          else
+            files=$(git diff --name-only --diff-filter=d "$BEFORE" "$SHA" -- '*.yaml')
+            echo "mode: changed files since $BEFORE"
+          fi
+
+          if [ -z "$files" ]; then
+            echo "no yaml files to purge"
+            exit 0
+          fi
+
+          fail=0
+          for f in $files; do
+            url="https://purge.jsdelivr.net/gh/${REPO}@${BRANCH}/${f}"
+            resp=$(curl -sS --max-time 60 "$url" || echo '{}')
+
+            # 只做扁平字符串提取，不引入 jq / python 依赖，便于本地离线验证。
+            flat=$(printf '%s' "$resp" | tr -d ' \n')
+            status=$(printf '%s' "$flat" | sed -n 's/.*"status":"\([^"]*\)".*/\1/p')
+            throttled=$(printf '%s' "$flat" | grep -c '"throttled":true' || true)
+            : "${status:=no-status}"
+
+            echo "$f -> status=$status throttled=$throttled"
+
+            if [ "$status" != "finished" ]; then
+              echo "::error::purge failed for $f: $resp"
+              fail=1
+            elif [ "$throttled" != "0" ]; then
+              # 被限流意味着缓存没有真正清掉，需要稍后重试。
+              echo "::warning::purge throttled for $f, edge cache may still be stale"
+            fi
+          done
+
+          exit $fail
