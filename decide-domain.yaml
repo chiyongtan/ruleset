@@ -5,7 +5,6 @@
 payload:
   # Google Play 防送中：必须优先于 google-cn / cn 规则并使用境外 DNS。
   - DOMAIN-SUFFIX,services.googleapis.cn
-  - DOMAIN-SUFFIX,play.googleapis.com
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
   - DOMAIN-SUFFIX,android.clients.google.com
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
