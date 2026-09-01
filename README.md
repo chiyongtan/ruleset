@@ -10,8 +10,8 @@
 | `important-ip.yaml` | ipcidr | 重要 IP（暂为空） | `RULE-SET,important-ip,自选节点组,no-resolve` |
 | `direct-domain.yaml` | classical | 直连域名 | `RULE-SET,direct-domain,DIRECT` |
 | `direct-ip.yaml` | ipcidr | 直连 IP | `RULE-SET,direct-ip,DIRECT,no-resolve` |
-| `btc-domain.yaml` | classical | Binance、OKX、Bitget、Bybit 域名 | `RULE-SET,btc-domain,自建组` |
-| `btc-ip.yaml` | ipcidr | 交易所当前 IP 快照 | `RULE-SET,btc-ip,自建组,no-resolve` |
+| `btc-domain.yaml` | classical | Binance、OKX、Bitget、Bybit 域名 | `RULE-SET,btc-domain,BTC` |
+| `btc-ip.yaml` | ipcidr | 交易所当前 IP 快照 | `RULE-SET,btc-ip,BTC,no-resolve` |
 | `decide-domain.yaml` | classical | 默认分流缺陷补充域名 | `RULE-SET,decide,选择节点` |
 
 > `btc-ip.yaml` 中多数地址属于共享 CDN/AWS 边缘节点，会随时间变化；应以 `btc-domain.yaml` 为主，IP规则仅补充直接以 IP 建连的情况。
@@ -102,8 +102,8 @@ rule-providers:
 
 rules:
   - RULE-SET,decide,选择节点
-  - RULE-SET,btc-domain,自建组
-  - RULE-SET,btc-ip,自建组,no-resolve
+  - RULE-SET,btc-domain,BTC
+  - RULE-SET,btc-ip,BTC,no-resolve
   - RULE-SET,important-domain,自选节点组
   - RULE-SET,important-ip,自选节点组,no-resolve
   - RULE-SET,direct-domain,DIRECT

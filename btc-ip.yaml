@@ -1,6 +1,6 @@
 # 加密货币交易所 IP 快照
 # behavior: ipcidr
-# 用法: RULE-SET,btc-ip,自建组,no-resolve
+# 用法: RULE-SET,btc-ip,BTC,no-resolve
 # 更新时间: 2026-08-26
 # 注意: 多数地址属于共享 CDN/AWS 边缘节点，可能动态变化；域名规则是主规则。
 payload:

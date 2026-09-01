@@ -1,6 +1,6 @@
 # 加密货币交易所域名
 # behavior: classical
-# 用法: RULE-SET,btc-domain,自建组
+# 用法: RULE-SET,btc-domain,BTC
 # 范围: Binance、OKX、Bitget、Bybit 官方主站/API/WS/区域域名
 payload:
   # Binance
