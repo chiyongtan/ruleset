@@ -6,8 +6,8 @@
 
 | 文件 | behavior | 用途 | 主配置引用 |
 |---|---|---|---|
-| `self-domain.yaml` | classical | 自建域名 | `RULE-SET,self-domain,自建组` |
-| `self-ip.yaml` | ipcidr | 自建 IP（暂为空） | `RULE-SET,self-ip,自建组,no-resolve` |
+| `important-domain.yaml` | classical | 重要域名 | `RULE-SET,important-domain,自选节点组` |
+| `important-ip.yaml` | ipcidr | 重要 IP（暂为空） | `RULE-SET,important-ip,自选节点组,no-resolve` |
 | `direct-domain.yaml` | classical | 直连域名 | `RULE-SET,direct-domain,DIRECT` |
 | `direct-ip.yaml` | ipcidr | 直连 IP | `RULE-SET,direct-ip,DIRECT,no-resolve` |
 | `btc-domain.yaml` | classical | Binance、OKX、Bitget、Bybit 域名 | `RULE-SET,btc-domain,自建组` |
@@ -19,8 +19,8 @@
 ## Raw 链接
 
 ```text
-https://raw.githubusercontent.com/chiyongtan/ruleset/main/self-domain.yaml
-https://raw.githubusercontent.com/chiyongtan/ruleset/main/self-ip.yaml
+https://raw.githubusercontent.com/chiyongtan/ruleset/main/important-domain.yaml
+https://raw.githubusercontent.com/chiyongtan/ruleset/main/important-ip.yaml
 https://raw.githubusercontent.com/chiyongtan/ruleset/main/direct-domain.yaml
 https://raw.githubusercontent.com/chiyongtan/ruleset/main/direct-ip.yaml
 https://raw.githubusercontent.com/chiyongtan/ruleset/main/btc-domain.yaml
@@ -31,8 +31,8 @@ https://raw.githubusercontent.com/chiyongtan/ruleset/main/decide-domain.yaml
 jsDelivr 备用：
 
 ```text
-https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/self-domain.yaml
-https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/self-ip.yaml
+https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/important-domain.yaml
+https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/important-ip.yaml
 https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/direct-domain.yaml
 https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/direct-ip.yaml
 https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/btc-domain.yaml
@@ -44,21 +44,21 @@ https://cdn.jsdelivr.net/gh/chiyongtan/ruleset@main/decide-domain.yaml
 
 ```yaml
 rule-providers:
-  self-domain:
+  important-domain:
     type: http
     behavior: classical
     format: yaml
     interval: 3600
-    path: ./ruleset/self-domain.yaml
-    url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/self-domain.yaml
+    path: ./ruleset/important-domain.yaml
+    url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/important-domain.yaml
 
-  self-ip:
+  important-ip:
     type: http
     behavior: ipcidr
     format: yaml
     interval: 3600
-    path: ./ruleset/self-ip.yaml
-    url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/self-ip.yaml
+    path: ./ruleset/important-ip.yaml
+    url: https://raw.githubusercontent.com/chiyongtan/ruleset/main/important-ip.yaml
 
   direct-domain:
     type: http
@@ -104,8 +104,8 @@ rules:
   - RULE-SET,decide,选择节点
   - RULE-SET,btc-domain,自建组
   - RULE-SET,btc-ip,自建组,no-resolve
-  - RULE-SET,self-domain,自建组
-  - RULE-SET,self-ip,自建组,no-resolve
+  - RULE-SET,important-domain,自选节点组
+  - RULE-SET,important-ip,自选节点组,no-resolve
   - RULE-SET,direct-domain,DIRECT
   - RULE-SET,direct-ip,DIRECT,no-resolve
 ```
