@@ -13,3 +13,4 @@ payload:
   - DOMAIN-SUFFIX,aihub.top
   # 分流验证用：纯文本回显出口 IP，无网页 UI、无地理信息、无广告
   - DOMAIN-SUFFIX,icanhazip.com
+  - DOMAIN-SUFFIX,tabitoken.com
